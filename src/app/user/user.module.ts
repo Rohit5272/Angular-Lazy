@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
 import { MaterialModule } from '../material/material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { GooglePayButtonModule } from '@google-pay/button-angular';
@@ -25,7 +25,8 @@ import { CartPageComponent } from '../cart-page/cart-page.component';
     UserRoutingModule,
     MaterialModule,
     FormsModule,
-    GooglePayButtonModule
+    GooglePayButtonModule,
+    ReactiveFormsModule
   ]
 })
 export class UserModule { }

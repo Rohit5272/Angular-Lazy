@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { cart, product } from '../includes/model/data-type';
 import { reduce } from 'rxjs';
@@ -16,9 +16,19 @@ export class ProductDetailsComponent implements OnInit{
   cartData:product | undefined;
   relatedProducts:product[] = [];
 
-  constructor(private _activeRoute:ActivatedRoute,private _productService:ProductService) {}
+  constructor(private _activeRoute:ActivatedRoute,private _productService:ProductService,private _router: Router) {
+    this._router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.updateProductDetails();
+      }
+    });
+  }
   
   ngOnInit(): void {
+    this.updateProductDetails()
+  }
+
+  updateProductDetails(){
     let productId = this._activeRoute.snapshot.paramMap.get('productId');
     productId && this._productService.getProduct(productId).subscribe((res) => {
       // console.log(res);
@@ -40,8 +50,8 @@ export class ProductDetailsComponent implements OnInit{
       // -----related products-------
       this._productService.shopByCategory(this.productData.category)
       .subscribe((res)=>{
-        console.log(res);
         this.relatedProducts = res;
+        console.log(this.relatedProducts);
       })
       
       let user = sessionStorage.getItem('user');
@@ -53,18 +63,11 @@ export class ProductDetailsComponent implements OnInit{
           // console.log(item);
           if(item.length) {
             this.cartData=item[0];
-            console.log(this.cartData);
+            // console.log(this.cartData);
             this.removeCart = true;
           }
         })
       }
-    })
-  }
-
-  reload() {
-    let productId = this._activeRoute.snapshot.paramMap.get('productId');
-    productId && this._productService.getProduct(productId).subscribe((res)=>{
-      
     })
   }
 
@@ -87,7 +90,7 @@ export class ProductDetailsComponent implements OnInit{
           selected: false
         }
         delete cartData.id;
-        console.log(cartData);
+        // console.log(cartData);
         this._productService.addToCart(cartData).subscribe((res) => {
           if(res) {
             this._productService.getCartList(userId);
@@ -104,7 +107,7 @@ export class ProductDetailsComponent implements OnInit{
     } else {
       let user = sessionStorage.getItem('user');
       let userId = user && JSON.parse(user).id;
-      console.log(this.cartData);
+      // console.log(this.cartData);
       this.cartData && this._productService.removeToCart(this.cartData.id)
       .subscribe((res) => {
         this._productService.getCartList(userId);

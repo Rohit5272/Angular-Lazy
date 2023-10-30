@@ -15,6 +15,7 @@ import { MaterialModule } from './material/material.module';
 import { ShopComponent } from './shop/shop.component';
 import { DiscountComponent } from './home/discount/discount.component';
 import { GooglePayButtonModule } from '@google-pay/button-angular';
+import { RelatedProductsComponent } from './product-details/related-products/related-products.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { GooglePayButtonModule } from '@google-pay/button-angular';
     FooterComponent,
     ShopComponent,
     DiscountComponent,
+    RelatedProductsComponent,
   ],
   imports: [
     BrowserModule,

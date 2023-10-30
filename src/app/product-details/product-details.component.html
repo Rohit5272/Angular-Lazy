@@ -7,7 +7,7 @@
             <h1>{{productData.name | titlecase}}</h1>
             <h3>Price : <strong>{{productData.price | currency:'INR':true:'1.0-0' }}</strong></h3>
             <div>
-                Color:
+                <h6>Color:</h6>
                 <h5 [style.backgroundColor]="productData.color" class="product-color"></h5>
             </div>
             <h6>Category: {{productData.category}}</h6>
@@ -18,30 +18,7 @@
         </div>
     </div>
 </div>
-<!-- ---------related Products------------ -->
-<section>
-    <h1 class="name">Related products with free delivery on eligible orders</h1>
-    <div class="row1">
-        <div class="card" *ngFor="let item of relatedProducts">
-            <div class="image">
-                <a routerLink="/details/{{item.id}}"><img src="{{item.image}}"></a>
-            </div>
-            <div class="offer">
-                <h4>Up to 25% off</h4>
-                <p>Great Indian Festival</p>
-            </div>
-            <h2>Name: {{item.name | titlecase}}</h2>
-            <h3>Price : {{item.price | currency:'INR':true:'1.0-0'}}</h3>
-            <h5><strong id="des">Description : </strong>{{item.description | slice:0:55}}</h5>
-            <div class="row2">
-                <ul>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+
+<ng-container *ngIf="relatedProducts && relatedProducts.length > 0">
+  <app-related-products [childProducts]="relatedProducts"></app-related-products>
+</ng-container>

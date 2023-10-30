@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { ProductService } from 'src/app/services/product.service';
 import { SignUp, cart, login, product } from 'src/app/includes/model/data-type';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-user-auth',
@@ -12,7 +13,7 @@ export class UserAuthComponent implements OnInit{
   
   showLogin : boolean= true;
   authError:string="";
-  constructor(private _userService:UserService,private _productService:ProductService) {}
+  constructor(private _userService:UserService,private _productService:ProductService,fb:FormBuilder) {}
 
   ngOnInit(): void {
     this._userService.userAuthReload()
