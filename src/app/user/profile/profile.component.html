@@ -1,0 +1,179 @@
+<div class="wrapper">
+    <div class="main">
+    <div class="left">
+        <div class="box">
+            <h1>Overview</h1>
+        </div>
+        <div class="box">
+            <h1>Orders</h1>
+            <h2>Orders & Returns</h2>
+        </div>
+        <div class="box">
+            <h1>Account</h1>
+            <h2 (click)="changeToDetails()">Profile</h2>
+            <h2 (click)="changeToForm()">Edit</h2>
+            <h2>Address</h2>
+        </div>
+        <div class="box">
+            <h1>Legal</h1>
+            <h2>Terms Of Use</h2>
+            <h2>Privacy Policy</h2>
+        </div>
+    </div>
+    <div class="right">
+        <div class="profile" [ngSwitch]="type">
+            <div *ngSwitchCase="'profileDetails'" class="details">
+                <h2>Profile Details</h2>
+                <div class="field">
+                    <div><h3>Full Name</h3></div>
+                    <div><h3>{{profileData?.fname}} {{profileData?.lname}}</h3></div>
+                </div>
+                <div class="field">
+                    <div><h3>Mobile Number</h3></div>
+                    <div><h3>{{profileData?.mobile}}</h3></div>
+                </div>
+                <div class="field">
+                    <div><h3>Email ID</h3></div>
+                    <div><h3>{{profileData?.email}}</h3></div>
+                </div>
+                <div class="field">
+                    <div><h3>Gender</h3></div>
+                    <div><h3>{{profileData?.gender | titlecase}}</h3></div>
+                </div>
+                <div class="field">
+                    <div><h3>DOB</h3></div>
+                    <div><h3>{{profileData?.DOB | date: 'dd-MM-yyyy' : 'UTC'}}</h3></div>
+                </div>
+                <div class="field">
+                    <div><h3>Address 1</h3></div>
+                    <div><h3>{{profileData?.address1}}</h3></div>
+                </div>
+                <div class="field">
+                    <div><h3>Address 2</h3></div>
+                    <div><h3>{{profileData?.address2}}</h3></div>
+                </div>
+                <div class="field">
+                    <div><h3>City</h3></div>
+                    <div><h3>{{profileData?.city}}</h3></div>
+                </div>
+                <div class="field">
+                    <div><h3>State</h3></div>
+                    <div><h3>{{profileData?.state}}</h3></div>
+                </div>
+                <div class="field">
+                    <button (click)="changeToForm()">Edit</button>
+                </div>
+            </div>
+            <!-----------from------------->
+            <div *ngSwitchCase="'profileForm'" class="form">
+                <h1>Profile Edit Details</h1>
+                <!-- ---------Post Form-------------- -->
+                <form *ngIf="show" #profile="ngForm" (ngSubmit)="submitProfile(profile.value)">
+                    <mat-form-field>
+                        <mat-label>fname</mat-label>
+                        <input type="text" name="fname" ngModel matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>lname</mat-label>
+                        <input name="lname"  ngModel matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>mobile</mat-label>
+                        <input name="mobile" ngModel matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>email</mat-label>
+                        <input name="email" ngModel matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>Gender</mat-label>
+                        <mat-select name="gender" ngModel>
+                            <mat-option value="male">male</mat-option>
+                            <mat-option value="female">female</mat-option>
+                        </mat-select>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>Date Of Birth</mat-label>
+                        <input name="DOB" ngModel matInput [matDatepicker]="picker">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>Address1</mat-label>
+                        <input type="text" name="address1" ngModel matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>Address2</mat-label>
+                        <input type="text" name="address2" ngModel matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>City</mat-label>
+                        <input type="text" name="city" ngModel matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>State</mat-label>
+                        <input type="text" name="state" ngModel matInput>
+                    </mat-form-field><br>
+                    <button>submit</button>
+                </form>
+                <!-- -----------------Edit Form--------------- -->
+                <form *ngIf="!show" #updateProfile="ngForm" (ngSubmit)="updateUserProfile(updateProfile.value)">
+                    <h2>{{msg | titlecase}}</h2>
+                    <mat-form-field style="display: none;">
+                        <mat-label>Id</mat-label>
+                        <input type="number" name="id" ngModel="{{profileData?.id}}" matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>fname</mat-label>
+                        <input type="text" name="fname" ngModel="{{profileData?.fname}}" matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>lname</mat-label>
+                        <input name="lname"  ngModel="{{profileData?.lname}}" matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>mobile</mat-label>
+                        <input name="mobile" ngModel="{{profileData?.mobile}}" matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>email</mat-label>
+                        <input name="email" ngModel="{{profileData?.email}}" matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>Gender</mat-label>
+                        <mat-select name="gender" ngModel="{{profileData?.gender}}">
+                            <mat-option value="male">male</mat-option>
+                            <mat-option value="female">female</mat-option>
+                        </mat-select>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>Date Of Birth</mat-label>
+                        <input name="DOB" ngModel="{{profileData?.DOB}}" matInput [matDatepicker]="picker">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>Address1</mat-label>
+                        <input name="address1" ngModel="{{profileData?.address1}}" matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>Address2</mat-label>
+                        <input name="address2" ngModel="{{profileData?.address2}}" matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>City</mat-label>
+                        <input name="city" ngModel="{{profileData?.city}}" matInput>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>State</mat-label>
+                        <input name="state" ngModel="{{profileData?.state}}" matInput>
+                    </mat-form-field><br>
+                    <button>update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

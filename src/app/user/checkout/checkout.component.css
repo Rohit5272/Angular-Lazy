@@ -1,0 +1,126 @@
+
+/* ------------------------------- */
+.div {
+  width: 100%;
+  height: auto;
+}
+.main{
+  /* border-top: 1px solid #ddd; */
+  width: 80%;
+  margin: 0px auto 60px auto;
+  display: flex;
+  box-shadow: 0 2px 4px 0 rgb(220, 219, 219),0 4px 16px 0 rgb(217, 216, 216);
+}
+.wrapper h1 {
+  /* border: 1px solid red; */
+  font-family: 'Cormorant Garamond', serif;
+  width: 70%;
+  margin: 30px auto;
+  padding: 10px;
+  font-weight: 600;
+  margin-top: 60px;
+  font-size: 30px;
+}
+.one{
+  /* box-shadow: 0 2px 4px 0 rgb(220, 219, 219),0 4px 16px 0 rgb(217, 216, 216); */
+  width: 80%;
+  margin: auto;
+  border: 1px solid #ddd;
+}
+.left {
+  /* border: 1px solid green; */
+  width: 60%;
+  padding: 50px 0px 50px 70px;
+}
+mat-form-field {
+  width: 50%;
+}
+.right{
+  /* border: 1px solid green; */
+  width: 40%;
+  height: auto;
+  padding-left: 20px;
+  padding-top: 30px;
+}
+.products {
+  display: flex;
+  height: auto;
+}
+.im {
+  width: 70px;
+  height: 70px;
+}
+.im img {
+  width: 100%;
+  height: 100%;
+}
+.right h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+}
+.products {
+  /* border: 1px solid green; */
+}
+.products h3 {
+  /* border: 1px solid red; */
+  align-self: center;
+  color: rgb(94, 92, 92);
+}
+.right h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  margin-top: 20px;
+  color: rgb(94, 92, 92);
+}
+.summery {
+  display: flex;
+  /* border: 1px solid red; */
+  justify-content: space-between;
+  width: 70%;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+.summery h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+button {
+  width: 40%;
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  background-color: rgb(78, 185, 239);
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+strong {
+  color: black;
+  font-size: 25px;
+}
+@media (max-width:780px) {
+  .main{
+    flex-direction: column;
+  }
+  .left{
+    width: 100%;
+    padding: 10px;
+  }
+  .right{
+    width: 100%;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  button {
+    width: 80%;
+    margin: auto;
+    margin-left: 10%;
+  }
+  google-pay-button{
+    width: 80%;
+    margin-left: 7%;
+  }
+
+}

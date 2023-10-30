@@ -1,0 +1,29 @@
+/* table {
+    text-align: left;
+    color: blueviolet;
+    border-collapse: collapse;
+}
+
+table td, table th {
+    border: 1px solid blueviolet;
+    padding: 10px;
+    min-width: 130px;
+}
+.adjust-update-link {
+    margin-left: 10px;
+} 
+*/
+
+.content {
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+img {
+    width: 100px;
+    height: 100px;
+}
+mat-icon  {
+    margin: 0px 8px;
+}

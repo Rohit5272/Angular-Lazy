@@ -1,0 +1,34 @@
+<div class="greeting">
+    <div class="main">
+        <h6>Members's days</h6>
+        <h1>UP TO 10000 INSTANT</h1>
+        <h1>BANK DISCOUNT</h1>
+        <h1>bestselling</h1>
+        <button mat-raised-button >SHOP NOW</button>
+    </div>
+</div>
+<!-- -----------mobile section----------- -->
+<h1 class="name">Explore Top offers in Smartphones</h1>
+<div class="row1">
+    <div class="card" *ngFor="let item of mobileData">
+        <div class="image">
+            <!-- <img src="{{item.image}}"> -->
+            <a routerLink="/details/{{item.id}}"><img src="{{item.image}}"></a>
+        </div>
+        <div class="offer">
+            <h4>Up to 25% off</h4>
+            <p>Great Indian Festival</p>
+        </div>
+        <h3>Price :  {{item.price | currency:'INR':true:'1.0-0'}}</h3>
+        <h2>Name: {{item.name | titlecase}}</h2>
+        <div class="row">
+            <ul>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>

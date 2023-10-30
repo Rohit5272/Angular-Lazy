@@ -1,0 +1,27 @@
+<div class="content2">
+        <h1 class="sale"> Shop By Category </h1>
+        <p class="p"> Shop Now </p>
+        <div fxLayout="row wrap" fxLayoutGap="50px grid" style="margin: 0%; padding: 0%;">
+            <div fxFlex="25%" fxFlex.xs="100%" margin="auto" fxFlex.sm="33%" style="margin: 0px !important; padding: 0px !important;" *ngFor="let item of shopData">
+                <mat-card class="example-card">
+                        <mat-card-header>
+                            <mat-card-title>{{item.name}}</mat-card-title>
+                            <mat-card-subtitle>{{item.category}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="{{item.image}}">
+                        <mat-divider></mat-divider>
+                        <mat-card-content>
+                            <div class="data">
+                                <h1>Price: {{item.price}}</h1>
+                                <p>Color: {{item.color}}</p>
+                                <p>Description: {{item.description | slice:0:12}}..</p>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button><a routerLink="/details/{{item.id}}">View Details</a></button>
+                            <button mat-button><a href="">Add to Cart</a></button>
+                        </mat-card-actions>
+                    </mat-card>
+            </div>
+        </div>
+</div>

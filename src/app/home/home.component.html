@@ -1,0 +1,95 @@
+<section>
+    <div class="greeting">
+        <div class="main">
+            <h6>Members's days</h6>
+            <h1>Your exclusive</h1>
+            <h1>sitewide offer</h1>
+            <h1>awaits</h1>
+            <button mat-raised-button >SIGNUP NOW</button>
+        </div>
+    </div>
+</section>
+
+<!-- ---------corousel--------------- -->
+<section>
+    <h1 class="sale"> Great Indian Festival </h1>
+    <p class="p"> STARTS 8th OCT </p>
+    <ngb-carousel *ngIf="popularProduct" class="corousel">
+        <h1 class="sale"> Great Indian Festival </h1>
+        <p class="p"> STARTS 8th OCT  </p>
+        <ng-template *ngFor="let item of popularProduct" ngbSlide>
+            <div class="picsum-img-wrapper">
+                <a routerLink="/details/{{item.id}}">
+                    <img class="product-header-img" src="{{item.image}}" alt="Random first slide" />
+                </a>
+            </div>
+            <div class="carousel-caption">
+            </div>
+            <div class="inner">
+                    <h3>{{item.name}}</h3>
+                    <p>{{item.description | slice:0:15}}</p>
+                </div>
+        </ng-template>
+    </ngb-carousel>
+</section>
+
+<!-- ---------popular products--------------- -->
+<section>
+    <div class="content">
+        <h1 class="sale"> Popular Products </h1>
+        <p class="p"> Shop Now </p>
+        <div fxLayout="row wrap" fxLayoutGap="50px grid" style="margin: 0%; padding: 0%;">
+            <div fxFlex="25%" fxFlex.xs="100%" margin="auto" fxFlex.sm="33%" style="margin: 0px !important; padding: 0px !important;" *ngFor="let item of trendyProducts">
+                <mat-card class="example-card">
+                        <mat-card-header>
+                            <mat-card-title>{{item.name | titlecase}}</mat-card-title>
+                            <mat-card-subtitle>{{item.category}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="{{item.image}}"/>
+                        <mat-divider></mat-divider>
+                        <mat-card-content>
+                            <div class="data">
+                                <h1 style="color: rgb(244, 163, 12);">Price: {{item.price | currency:'INR':true:'1.0-0'}}</h1>
+                                <p>Color: {{item.color}}</p>
+                                <p>Description: {{item.description | slice:0:15}}..</p>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button><a routerLink="/details/{{item.id}}">View Details</a></button>
+                            <button mat-button><a>Add to Cart</a></button>
+                        </mat-card-actions>
+                    </mat-card>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- -----------Discount Products------------  -->
+<app-discount></app-discount>
+
+<!----------- category products ------------------>
+<section>
+    <div class="content3">
+        <h1 class="sale"> Shop by Category </h1>
+        <p class="p"> new  </p>
+        <div fxLayout="row wrap" fxLayoutGap="30px grid">
+            <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of shopProducts">
+                <mat-card class="ex-card">
+                        <a routerLink="shop/{{item.category}}" (mouseover)="searchCategory(item.category)"><img src="{{item.image}}"></a>
+                        <div class="text">
+                            {{item.name}} <br>
+                            <p>{{num}} Products</p>
+                        </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="back"><h1><a href="#">Back To Top</a></h1></div>
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <div class="main">
+        <h2>Update New Product</h2>
+        <p class="p_message">{{productMessage}}</p>
+        <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)" class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>name</mat-label>
+                <input type="text" matInput name="name" ngModel="{{productdata?.name}}" placeholder="Enter product name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Price</mat-label>
+                <input type="number" matInput name="price" ngModel="{{productdata?.price}}" placeholder="Enter product price">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Color</mat-label>
+                <input type="text" matInput name="color" ngModel="{{productdata?.color}}" placeholder="Enter product color">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Category</mat-label>
+                <!-- <input type="text" matInput name="category" ngModel="{{productdata?.category}}" placeholder="Enter product category"> -->
+                <mat-select name="category" ngModel="{{productdata?.category}}">
+                    <mat-option value="accesories">Accesories</mat-option>
+                    <mat-option value="men">Men</mat-option>
+                    <mat-option value="women">Women</mat-option>
+                    <mat-option value="mobiles">Mobiles</mat-option>
+                    <mat-option value="watches">Watches</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Description</mat-label>
+                <textarea type="text" matInput name="description" ngModel="{{productdata?.description}}" placeholder="Enter product Description"></textarea>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>URL</mat-label>
+                <input type="text" matInput name="image" ngModel="{{productdata?.image}}" placeholder="Enter product image URL">
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="btn">Update Product</button>
+        </form>
+    </div>
+</div>
+

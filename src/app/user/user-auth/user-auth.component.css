@@ -1,0 +1,136 @@
+.wrapper {
+  height: auto;
+  width: 100%;
+}
+
+.box {
+  /* border: 1px solid red; */
+  width: 55%;
+  display: flex;
+  margin: auto;
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+
+.left {
+  /* border: 1px solid red; */
+  width: 50%;
+}
+
+/* ----------Right------------ */
+.right {
+  /* border: 1px solid green; */
+  width: 50%;
+  height: auto;
+  background-color: rgb(252, 220, 160);
+  box-shadow: 0 2px 4px 0 gray,0 4px 16px 0 gray;
+}
+.dummy {
+  width:50%;
+  text-align: center;
+  /* border: 1px solid red; */
+  margin: auto;margin-top: 10%;
+}
+.right img{
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.right h1{
+  font-family: 'Cormorant Garamond', serif;
+  text-align: center;
+  /* border: 1px solid red; */
+  font-size: 40px;
+  margin-top: 5%;
+  font-weight: 500;
+}
+.logo {
+  width: 50%;
+  margin: auto;
+  /* border: 1px solid green; */
+}
+.logo img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.social {
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid green; */
+  margin-top: 5%;
+}
+.social i {
+  /* border: 1px solid red; */
+  font-size: 28px;
+  margin: 0px 15px;
+  border-radius: 70%;
+  box-shadow: 5px 7px 10px 2px #b4b2b2;
+  background-color: white;
+}
+/* ------------right end------------------------ */
+.main {
+  /* border: 1px solid green; */
+  height: 500px;
+  width: 100%;
+  box-shadow: 0 2px 4px 0 gray,0 4px 16px 0 gray;
+  /* border-radius: 5%; */
+  font-family: 'Cormorant Garamond', serif;
+}
+.main h2 {
+  /* border: 1px solid green; */
+  text-align: center;
+  padding: 25px 0px;
+  font-size: 40px;
+  color: black;
+  /* letter-spacing: 3px; */
+  word-spacing: 7px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+}
+.example-form {
+  width: 80%;
+  margin: auto;
+}
+.example-full-width {
+  width: 100%;
+}
+mat-input {
+  font-family: 'Cormorant Garamond', serif;
+}
+.btn {
+  width: 100%;
+  font-size: 23px;
+  height: 40px;
+  margin-top: 20px;
+  word-spacing: 1px;
+  background-color: black;
+}
+.main p {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  color: black;
+  font-weight: 600;
+}
+
+
+
+
+@media only screen and (max-width: 680px) {
+  .main {
+    /* border: 1px solid green; */
+    width: 100%;
+  }
+  .box {
+    width: 90%;
+    flex-direction: column;
+  }
+  .right{
+    width: 100%;
+  }
+  .left{
+    width: 100%;
+  }
+
+}

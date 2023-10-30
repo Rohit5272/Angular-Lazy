@@ -1,0 +1,171 @@
+<mat-toolbar class="nav">
+  <div class="logo">
+    <a routerLink="/">
+      <img src="/assets/Screenshot_2023-10-08_193839-removebg-preview.png"/>
+    </a>
+  </div>
+  <!-- toggle  -->
+  <div class="toggle" (click)="opentoggle()" (blur)="opentoggle()">
+    <button><mat-icon>menu</mat-icon></button>
+  </div>
+
+  <!-- toggle end -->
+  <div *ngIf="menuType !== 'seller'" class="nav-search">
+    <input
+      type="text"
+      #searchInput
+      (keyup)="searchProduct($event)"
+      (blur)="hideSearch()"
+      placeholder="Search for products"
+    />
+    <button (click)="submitSearch(searchInput.value)"><mat-icon >search</mat-icon></button>
+    <ul class="suggested-result">
+      <li *ngFor="let item of searchResult">
+        <a (mousedown)="redirectToDetails(item.id)">{{ item.name }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <!---------------------- --nav-links--------------------  -->
+
+  <div [ngSwitch]="menuType" class="nav-links">
+    <!-- -------------Default------------------ -->
+    <ul *ngSwitchCase="'default'">
+      <li>
+        <a routerLink="sell/seller-auth"><mat-icon>store</mat-icon></a>
+      </li>
+      <li>
+        <a routerLink=""><mat-icon>home</mat-icon></a>
+      </li>
+      <li>
+        <a routerLink="user/user-auth"><mat-icon>account_circle</mat-icon></a>
+      </li>
+      <li>
+        <a routerLink="user/cart-page">
+          <mat-icon matBadge="{{ cartItem }}" matBadgeColor="warn">add_shopping_cart</mat-icon>
+        </a>
+      </li>
+    </ul>
+    <!-- --------------------user--------------- -->
+    <ul *ngSwitchCase="'user'">
+      <!-- <li><a routerLink="seller-auth"><mat-icon>store</mat-icon></a></li> -->
+      <li>
+        <a routerLink=""><mat-icon>home</mat-icon></a>
+      </li>
+      <li>
+        <a routerLink="user/my-orders"><mat-icon>shopping_bag</mat-icon></a>
+      </li>
+      <!-- <li><a routerLink="user-auth">{{userName | titlecase}}</a></li> -->
+      <li>
+        <div class="titlename">
+          <h6>Hello,</h6>
+          <a routerLink="user/profile"><h4>{{ userName | titlecase }}</h4></a>
+        </div>
+      </li>
+      <li>
+        <a (click)="userLogout()"><mat-icon>exit_to_app</mat-icon></a>
+      </li>
+      <li>
+        <a [routerLink]="cartItem > 0 ? 'user/cart-page' : null">
+          <mat-icon matBadge="{{ cartItem }}" matBadgeColor="warn">add_shopping_cart</mat-icon>
+        </a>
+      </li>
+    </ul>
+    <!-- ---------------seller------------------- -->
+    <ul *ngSwitchCase="'seller'" class="sellernav">
+      <li><a routerLink="sell/seller-add-product">Add Product</a></li>
+      <li><a routerLink="sell/seller-home">List</a></li>
+      <!-- <li><a routerLink="seller-auth">{{sellerName | titlecase}}</a></li> -->
+      <li>
+        <div class="titlename">
+          <h6>Hello,</h6>
+          <h4>{{ sellerName | titlecase }}</h4>
+        </div>
+      </li>
+      <li>
+        <a (click)="logout()"><mat-icon>exit_to_app</mat-icon></a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>
+
+
+<!-- ---------toggle------------ -->
+<div class="toggleopen" *ngIf="show" >
+  <div *ngIf="menuType !== 'seller'" class="nav-search1">
+    <input
+      type="text"
+      #searchInput
+      (keyup)="searchProduct($event)"
+      (blur)="hideSearch()"
+      placeholder="Search for products"
+    />
+    <button (click)="submitSearch(searchInput.value)">Search</button>
+    <!-- <ul class="suggested-result">
+      <li *ngFor="let item of searchResult">
+        <a (mousedown)="redirectToDetails(item.id)">{{ item.name }}</a>
+      </li>
+    </ul> -->
+  </div>
+  <!-- navlinks  -->
+  <div [ngSwitch]="menuType" class="nav-links1">
+    <ul *ngSwitchCase="'default'">
+      <li>
+        <a routerLink="seller-auth"><mat-icon>store</mat-icon></a>
+      </li>
+      <li>
+        <a routerLink=""><mat-icon>home</mat-icon></a>
+      </li>
+      <li>
+        <a routerLink="user-auth"><mat-icon>account_circle</mat-icon></a>
+      </li>
+      <li>
+        <a href=""
+          ><mat-icon matBadge="{{ cartItem }}" matBadgeColor="warn"
+            >add_shopping_cart</mat-icon
+          ></a
+        >
+      </li>
+    </ul>
+    <ul *ngSwitchCase="'user'">
+      <!-- <li><a routerLink="seller-auth"><mat-icon>store</mat-icon></a></li> -->
+      <li>
+        <a routerLink=""><mat-icon>home</mat-icon></a>
+      </li>
+      <li>
+        <a routerLink="my-orders"><mat-icon>shopping_bag</mat-icon></a>
+      </li>
+      <li>
+        <div class="titlename">
+          <h6>Hello,</h6>
+          <h4>{{ userName | titlecase }}</h4>
+        </div>
+      </li>
+      <li>
+        <a (click)="userLogout()"><mat-icon>exit_to_app</mat-icon></a>
+      </li>
+      <li>
+        <a [routerLink]="cartItem > 0 ? 'cart-page' : null"
+          ><mat-icon matBadge="{{ cartItem }}" matBadgeColor="warn"
+            >add_shopping_cart</mat-icon
+          ></a
+        >
+      </li>
+    </ul>
+    <!-- ---------------seller------------------- -->
+    <ul *ngSwitchCase="'seller'" class="sellernav">
+      <li><a routerLink="seller-add-product">Add Product</a></li>
+      <li><a routerLink="seller-home">List</a></li>
+      <!-- <li><a routerLink="seller-auth">{{sellerName | titlecase}}</a></li> -->
+      <li>
+        <div class="titlename">
+          <h6>Hello,</h6>
+          <h4>{{ sellerName | titlecase }}</h4>
+        </div>
+      </li>
+      <li>
+        <a (click)="logout()"><mat-icon>exit_to_app</mat-icon></a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Poppins:wght@300&family=Raleway:ital,wght@0,300;1,200&display=swap');
+
+/* --------------------grerting------------ */
+.greeting {
+    height: 95vh;
+    width: 100%;
+    margin-top: 1px;
+    background-image: url('https://websitedemos.net/inessa-perfumes-04/wp-content/uploads/sites/1112/2022/06/bg-01.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.main {
+    position: absolute;
+    top: 22%;
+    left: 13%;
+    font-family: 'Cormorant Garamond',serif;
+}
+.main h6 {
+    font-weight: 500;
+    font-size: 1.0666666666667rem;
+    letter-spacing: 2px;
+}
+.main h1{
+    font-size: 5.8666666666667rem;
+    font-weight: 500;
+    line-height: 0.85em;
+    font-family: 'Cormorant Garamond', serif;
+    /* padding-top: 25px; */
+}
+.mat-mdc-raised-button.mat-unthemed  {
+    background: black;
+    color: white;
+    border-radius: 4;
+}
+
+.mat-mdc-raised-button.mat-unthemed:hover  {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+} 
+
+@media screen and (max-width: 680px) {
+    .main h1{
+    font-size: 2.8666666666667rem;
+
+    .greeting {
+    /* height: 90vh; */
+    margin-top: 0px;
+    width: 100%;
+    background-image: url('https://websitedemos.net/inessa-perfumes-04/wp-content/uploads/sites/1112/2022/06/bg-01.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    }
+    }
+}
+/*------------------ corousel ---------- */
+.product-header-img {
+    object-fit: contain;
+    height: 600px;
+    width: 100%;
+}
+.sale {
+    font-family: 'Cormorant Garamond',serif;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 30px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+p {
+    font-family: 'Cormorant Garamond',serif;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 5px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+.carousel-caption  {
+    background-color: rgb(243, 156, 33);
+    opacity: 0.3;
+    height: 100px;
+
+}
+.corousel {
+    position: relative;
+}
+.inner {
+    position: absolute;
+    bottom: 20px;
+    left: 45%;
+    height: auto;
+    width: auto;
+}
+.inner h3{
+    font-family: 'Cormorant Garamond',serif;
+    font-weight: 900;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: black;
+}
+.inner p{
+    font-family: 'Cormorant Garamond',serif;
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: black;
+}
+/* --------------trendy products--------- */
+.content {
+    padding: 5%;
+    margin: auto;
+    background-color: rgb(250, 245, 235);
+    height: auto;
+}
+.example-card {
+  box-shadow: 0 2px 4px 0 gray,0 4px 16px 0 gray;
+  border-radius: 3%;
+}
+
+.mdc-card__actions {
+    justify-content: space-between;
+}
+.mat-mdc-card-header{
+    justify-content: center;
+}
+.mdc-card__media{
+    height: 200px;
+    object-fit: contain;
+    padding-bottom: 7px;
+    transition: transform .3s ease;
+}
+.mdc-card__media:hover{
+    transform: scale(1.1);
+}
+
+a {
+    font-family: 'Cormorant Garamond',serif;
+    color: black;
+    text-decoration: none;
+    font-weight: 900;
+}
+.mat-mdc-card-content h1 {
+    font-family: 'Cormorant Garamond',serif;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    font-weight: 1000;
+}
+.data {
+    display: flex;
+    flex-direction: column;
+    line-height: 2px;
+    height: auto;
+}
+
+/* --------Category Products-------------- */
+.content3 {
+    padding: 3%;
+    background-color: white;
+    /* height: 90vh; */
+    padding-bottom: 70px;
+}
+.sale {
+    font-family: 'Cormorant Garamond',serif;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 30px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+p {
+    font-family: 'Cormorant Garamond',serif;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 5px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+.ex-card {
+  box-shadow: 0 2px 4px 0 gray,0 4px 16px 0 gray;
+  position: relative;
+  border-radius: 5%;
+}
+.ex-card img{
+    width: 100%;
+    height: 480px;
+    object-fit: contain;
+    /* border: 1px solid red; */
+}
+.text {
+    position: absolute;
+    /* border: 1px solid green; */
+    text-align: center;
+    bottom: 3%;
+    font-size: 25px;
+    font-weight: 900;
+    font-family: 'Cormorant Garamond',serif;
+    line-height: 40px;
+    width: 100%;
+    background-color: white;
+    /* opacity: 0.6; */
+    line-height: 20px;
+    letter-spacing: 3px;
+    font-weight: 900;
+    /* border-radius: 5%; */
+}
+.ex-card:hover {
+        opacity: 0.5;
+}
+/* ---------back to top--------------  */
+.back {
+    background-color: rgb(29, 22, 22);
+    border: 2px solid black;
+}
+.back a {
+    color: white;
+    text-decoration: none;
+}
+.back h1 {
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+
