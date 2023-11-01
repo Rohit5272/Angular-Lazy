@@ -4,60 +4,26 @@
         <div class="left">
             <form>
                 <h2 style="color: green;">{{orderMsg }}</h2>
-                <form #orderData="ngForm" (ngSubmit)="orderNow(orderData.value)" class="form">
+                <form [formGroup]="orderForm" (ngSubmit)="orderNow()" class="form">
                     <mat-form-field>
                         <mat-label>Full Name</mat-label>
-                        <input type="name" matInput name="name" ngModel="{{profileData?.fname}} {{profileData?.lname}}" placeholder="Ente user email">
+                        <input type="name" matInput formControlName="name"  placeholder="Ente user email">
                     </mat-form-field><br>
                     <mat-form-field>
                         <mat-label>Email</mat-label>
-                        <input type="email" matInput name="email" ngModel="{{profileData?.email}}" placeholder="Ente user email">
+                        <input type="email" matInput formControlName="email" placeholder="Ente user email">
                     </mat-form-field><br>
                     <mat-form-field>
                         <mat-label>Address</mat-label>
-                        <input type="text" matInput name="address" ngModel="{{profileData?.address1}}" placeholder="Ente user address">
+                        <input type="text" matInput formControlName="address" placeholder="Ente user address">
                     </mat-form-field><br>
                     <mat-form-field>
                         <mat-label>Contact</mat-label>
-                        <input type="text" matInput name="contact" ngModel="{{profileData?.mobile}}" placeholder="Ente contact details">
+                        <input type="text" matInput formControlName="contact" placeholder="Ente contact details">
                     </mat-form-field><br>
                     <button mat-raised-button class="btn" style="background-color: rgb(238, 201, 132)">Order Now</button><br><br>
-                    <google-pay-button
-                        environment="TEST"
-                        buttonType="buy"
-                        buttonColor="black"
-                        [paymentRequest]="{
-                            apiVersion: 2,
-                            apiVersionMinor: 0,
-                            allowedPaymentMethods: [
-                            {
-                                type: 'CARD',
-                                parameters: {
-                                allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-                                allowedCardNetworks: ['AMEX', 'VISA', 'MASTERCARD']
-                                },
-                                tokenizationSpecification: {
-                                type: 'PAYMENT_GATEWAY',
-                                parameters: {
-                                    gateway: 'example',
-                                    gatewayMerchantId: 'exampleGatewayMerchantId'
-                                }
-                                }
-                            }
-                            ],
-                            merchantInfo: {
-                            merchantId: '12345678901234567890',
-                            merchantName: 'Demo Merchant'
-                            },
-                            transactionInfo: {
-                            totalPriceStatus: 'FINAL',
-                            totalPriceLabel: 'Total',
-                            totalPrice: '100.00',
-                            currencyCode: 'USD',
-                            countryCode: 'US'
-                            }
-                        }"></google-pay-button>
                 </form>
+                <button mat-raised-button class="btn" style="background-color: rgb(78, 185, 239);" (click)="payNow(orderForm.value)">Pay amount</button> <br><br>
             </form>
         </div>
         <div class="right">
@@ -69,7 +35,7 @@
             <h3> PRICE DETAILS (<strong>{{length}}</strong> items)</h3>
             <div class="summery">
                 <h4>Total</h4>
-                <h4 style="color: green;">{{totalPrice | currency:'INR':true:'1.0-0'}}</h4>
+                <h4 style="color: green;">{{ totalPrice | currency: 'INR': 'symbol':'1.0-0' }}</h4>
             </div>
         </div>
     </div>

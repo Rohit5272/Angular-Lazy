@@ -61,7 +61,7 @@ export class HeaderComponent implements OnInit{
 
   userLogout() {
     sessionStorage.removeItem('user');
-    this._router.navigate(['/user-auth']);
+    this._router.navigate(['user/user-auth']);
     this._productService.cartData.emit([])
   }
 

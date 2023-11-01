@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { product } from '../../includes/model/data-type';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 console.log("seller update product...");
 @Component({
@@ -12,19 +13,38 @@ console.log("seller update product...");
 export class SellerUpdateProductComponent implements OnInit{
   productdata:undefined | product;
   productMessage:undefined | string;
-  constructor(private _route: ActivatedRoute,private product:ProductService,private _router:Router) {}
+  constructor(private _route: ActivatedRoute,private product:ProductService,
+  private _router:Router,private fb:FormBuilder) {}
+
+   updateProduct:FormGroup = this.fb.group({
+    name:[''],
+    price:[''],
+    color:[''],
+    category:[''],
+    description:[''],
+    image:['']
+  })
   
   ngOnInit(): void {
     let productId = this._route.snapshot.paramMap.get('id')
     console.log(productId);
     productId && this.product.getProduct(productId).subscribe((data) => {
-      // console.log(data);
+      console.log(data);
       this.productdata = data;
+      this.updateProduct.patchValue({
+        name:this.productdata?.name,
+        price:this.productdata?.price,
+        color:this.productdata?.color,
+        category:this.productdata?.category,
+        description:this.productdata?.description,
+        image:this.productdata?.image,
+      })
     })
   }
 
-  submit(data:product) {
-    // console.log(data);
+
+  submit() {
+    let data = this.updateProduct.value;
     if(this.productdata) {
       let seller = sessionStorage.getItem('seller');
       data.sellerId = seller && JSON.parse(seller).id;

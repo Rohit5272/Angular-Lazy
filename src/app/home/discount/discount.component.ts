@@ -16,9 +16,8 @@ export class DiscountComponent implements OnInit{
   
   ngOnInit(): void {
     this._productService.shopByCategory('mobiles')
-    .pipe(take(6))
     .subscribe((res)=>{
-      // console.log(res);
+      console.log(res);
       this.mobileData = res
     })
   }

@@ -1,20 +1,20 @@
 <div class="wrapper">
     <div class="box">
         <div class="left">
-               <div class="main" *ngIf="!showLogin">
-        <h2> Seller Sign-Up</h2>
-        <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="example-form">
+        <div class="main" *ngIf="!showLogin">
+        <h2>Seller Sign-Up</h2>
+        <form [formGroup]="signUpForm" (ngSubmit)="signUp()" class="example-form">
             <mat-form-field class="example-full-width">
                 <mat-label>name</mat-label>
-                <input type="text" matInput name="name" ngModel placeholder="name">
+                <input type="text" matInput formControlName="name" placeholder="name">
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Email</mat-label>
-                <input type="text" matInput name="email" ngModel placeholder="Ex. pat@example.com">
+                <input type="text" matInput formControlName="email" placeholder="Ex. pat@example.com">
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Password</mat-label>
-                <input type="password" matInput name="password" ngModel placeholder="123456">
+                <input type="password" matInput formControlName="password" placeholder="123456">
             </mat-form-field>
             <button mat-raised-button class="btn" style="background-color: black;color: white;">Sign Up</button>
             <p>Already Have Account? <a (click)="changeForm()">Click to Login</a></p>
@@ -23,19 +23,19 @@
 
     <div class="main" *ngIf="showLogin">
         <h2>Seller Login</h2>
-        <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)" class="example-form">
+        <form [formGroup]="loginForm" (ngSubmit)="login()" class="example-form">
             <p class="error-p">{{authError}}</p>
             <mat-form-field class="example-full-width">
                 <mat-label>Email</mat-label>
-                <input type="text" matInput #email="ngModel" email required name="email" ngModel placeholder="Ex. pat@example.com">
-                <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Please Enter valid Input</span></p>
+                <input type="text" matInput formControlName="email" ngModel placeholder="Ex. pat@example.com">
+                <p class="invalid-input"><span *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched">Please Enter valid Input</span></p>
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Password</mat-label>
-                <input type="password" matInput #password="ngModel" required name="password" ngModel placeholder="123456">
-                <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Please Enter valid Input</span></p>
+                <input type="password" matInput formControlName="password" ngModel placeholder="123456">
+                <p class="invalid-input"><span *ngIf="loginForm.get('password')?.hasError('password') && loginForm.get('password')?.touched">Please Enter valid Input</span></p>
             </mat-form-field>
-            <button mat-raised-button [disabled]="sellerLogin.invalid" class="btn" style="background-color: black;color: white;">Login</button>
+            <button mat-raised-button class="btn" style="background-color: black;color: white;">Login</button>
             <p>Want Create  Account ? <a (click)="changeForm()">Click Here</a></p>
         </form>
     </div>

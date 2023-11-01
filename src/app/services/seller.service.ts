@@ -27,7 +27,7 @@ export class SellerService {
   reloadSeller() {
     if(sessionStorage.getItem('seller')) {
       this.isSellerLoggedIn.next(true);
-      this._router.navigate(['seller-home']);
+      this._router.navigate(['sell/seller-home']);
     }
   }
 

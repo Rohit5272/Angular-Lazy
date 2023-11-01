@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { product } from 'src/app/includes/model/data-type';
 
 @Component({
   selector: 'app-related-products',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./related-products.component.css']
 })
 export class RelatedProductsComponent implements OnInit{
-  @Input() childProducts:any
+  @Input() childProducts:product[] = [];
   
   ngOnInit(): void {
     console.log(this.childProducts);

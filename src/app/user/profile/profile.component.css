@@ -4,7 +4,7 @@
     display: flex;
     margin: 80px auto;
     font-family: 'Cormorant Garamond', serif;
-    box-shadow: 2px 2px 10px rgb(176, 172, 172);
+    box-shadow: 2px 2px 10px rgb(145, 125, 88);
 }
 .left {
     width: 20%;
@@ -54,15 +54,15 @@
     margin: auto;
 }
 .profile h2 {
-    padding-left: 30px;
+    padding-left: 10px;
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
+    font-weight: 900;
     margin-top: 10px;
+    color: rgb(232, 152, 4);
+    font-size: 30px;
 }
 .field {
     display: flex;
-    /* border: 1px solid green; */
-    /* justify-content: space-around; */
 }
 
 .field div{
@@ -78,15 +78,19 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 18px;
     font-weight: 600;
+    color: rgb(108, 108, 108);
 }
 
 .field button {
     width: 70%;
-    margin: 2% 5%;
+    margin: 2% 0.1%;
     padding: 10px;
     font-size: 20px;
     font-weight: 600;
-    border: none
+    border: none;
+    border-radius: 4px;
+    letter-spacing: 2px;
+    background-color:  rgb(238, 201, 132);
 }
 
 /* ------------form ---------------- */
@@ -97,6 +101,8 @@
 .form h1 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
+    color: rgb(232, 152, 4);
+    font-size: 30px;
 }
 mat-form-field {
     width: 50%;
@@ -107,8 +113,11 @@ mat-form-field {
     margin: 3% 5%;
     padding: 8px;
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 600;
+    border-radius: 4px;
+    letter-spacing: 2px;
     border: none;
+    background-color: rgb(238, 201, 132);
 }
 .form h2 {
     font-family: 'Cormorant Garamond', serif;

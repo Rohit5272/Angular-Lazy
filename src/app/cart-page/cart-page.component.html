@@ -11,7 +11,7 @@
                     <h2>{{cart.name | titlecase}}</h2>
                     <h3>{{cart.description | titlecase}}</h3>
                     <P>Great Indian Festival</P>
-                    <h4>Price : {{ cart.price | currency:'INR':true:'1.0-0'}}</h4>
+                    <h4>Price : {{ cart.price | currency: 'INR': 'symbol':'1.0-0'}}</h4>
                     <h4>Color : {{cart.color}}</h4>
                     <div class="quantity">
                         <h4>Quantity : </h4>
@@ -31,11 +31,11 @@
                     <button>Apply</button>
                 </div>
                 <ul>
-                    <li><span>Amount</span><span>{{priceSummary.price | currency:'INR':true:'1.0-0'}}</span></li>
-                    <li style="color: rgb(255, 63, 108);"><span>Tax</span><span>{{priceSummary.tax | currency:'INR':true:'1.0-0'}}</span></li>
-                    <li><span>Delivery</span><span>{{priceSummary.delivery | currency:'INR':true:'1.0-0'}}</span></li>
-                    <li style="border-bottom: 1px solid #ddd; padding-bottom: 15px;color: green;"><span>Discount</span><span>-{{priceSummary.discount | currency:'INR':true:'1.0-0'}}</span></li>
-                    <li style="padding-top: 15px;"><span>Total</span><span>{{priceSummary.total | currency:'INR':true:'1.0-0'}}</span></li>
+                    <li><span>Amount</span><span>{{priceSummary.price | currency: 'INR': 'symbol':'1.0-0'}}</span></li>
+                    <li style="color: rgb(255, 63, 108);"><span>Tax</span><span>{{priceSummary.tax | currency: 'INR': 'symbol':'1.0-0'}}</span></li>
+                    <li><span>Delivery</span><span>{{priceSummary.delivery | currency: 'INR': 'symbol':'1.0-0'}}</span></li>
+                    <li style="border-bottom: 1px solid #ddd; padding-bottom: 15px;color: green;"><span>Discount</span><span>-{{priceSummary.discount | currency: 'INR': 'symbol':'1.0-0'}}</span></li>
+                    <li style="padding-top: 15px;"><span>Total</span><span>{{priceSummary.total | currency: 'INR': 'symbol':'1.0-0'}}</span></li>
                     <button (click)="checkout()" class="checkout" > Checkout </button>
                 </ul>
             </div>

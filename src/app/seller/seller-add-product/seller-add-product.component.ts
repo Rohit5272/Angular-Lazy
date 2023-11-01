@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { product } from '../../includes/model/data-type';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
-console.log("seller add product...");
 @Component({
   selector: 'app-seller-add-product',
   templateUrl: './seller-add-product.component.html',
@@ -10,10 +9,20 @@ console.log("seller add product...");
 })
 export class SellerAddProductComponent {
   addProductMessage:string | undefined;
-  constructor(private _product:ProductService) {}
+  constructor(private _product:ProductService,private fb:FormBuilder) {}
 
-  submit(data:product) {
+  addProductForm:FormGroup = this.fb.group({
+    name:[''],
+    price:[''],
+    color:[''],
+    category:[''],
+    description:[''],
+    image:['']
+  })
+
+  submit() {
     // console.log(data);
+    let data = this.addProductForm.value;
     let seller = sessionStorage.getItem('seller');
     data.sellerId = seller && JSON.parse(seller).id;
     this._product.addProduct(data).subscribe(res => {

@@ -10,7 +10,7 @@
 <!-- -----------mobile section----------- -->
 <h1 class="name">Explore Top offers in Smartphones</h1>
 <div class="row1">
-    <div class="card" *ngFor="let item of mobileData">
+    <div class="card" *ngFor="let item of mobileData.slice(0,6)">
         <div class="image">
             <!-- <img src="{{item.image}}"> -->
             <a routerLink="/details/{{item.id}}"><img src="{{item.image}}"></a>
