@@ -4,6 +4,7 @@ import { cart, order, profile } from '../../includes/model/data-type';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { interval } from 'rxjs';
 
 declare var Razorpay: any;
 @Component({
@@ -19,6 +20,9 @@ export class CheckoutComponent implements OnInit{
   orderProduct:cart[] = [];
   profileData:profile | undefined
   length:number=0;
+  show:boolean=false;
+  progressBarValue = 0;
+  interval: any;
 
   constructor(private _productService:ProductService,private _router:Router,
   private _userService:UserService,private fb:FormBuilder) {}
@@ -63,8 +67,7 @@ export class CheckoutComponent implements OnInit{
   }
 
   payNow(orderFormData: any){
-    console.log('hello');
-    const RazorpayOptions = {
+    const RazorpayOptions:any = {
       description:'Sample Razorpay demo',
       currency:'INR',
       amount: this.totalPrice * 100,
@@ -86,20 +89,26 @@ export class CheckoutComponent implements OnInit{
       }
     }
 
-    const successCallback = (paymentid:any) => {
-      console.log(paymentid);
-    }
-
-    const failureCallback = (e:any) => {
-      console.log(e);
-    }
-
-    Razorpay.open(RazorpayOptions,successCallback,failureCallback);
+    RazorpayOptions.handler = (response: any, error: any) => {
+      if(response){
+        this.orderNow()
+      }
+      console.log(response);
+    };
+    // const successCallback = (paymentid:any) => {
+    //   console.log(paymentid);
+    // }
+    // const failureCallback = (e:any) => {
+    //   console.log(e);
+    // }
+    // Razorpay.open(RazorpayOptions,successCallback,failureCallback);
+    Razorpay.open(RazorpayOptions);
   }
 
   orderNow() {
     let user = sessionStorage.getItem('user');
     let userId = user && JSON.parse(user).id;
+    
 
     if(this.totalPrice) {
       let orderData:any = {
@@ -115,13 +124,28 @@ export class CheckoutComponent implements OnInit{
       })
       this._productService.orderNow(orderData).subscribe((res) => {
         if(res) {
-          this.orderMsg = 'Your Order has been placed'
+          this.show = true;
+          this.orderMsg = 'Your Order has been placed';
+          this,this.progressBar();
           setTimeout(() => {
             this._router.navigate(['user/my-orders']);
             this.orderMsg = undefined;
+            this.show = false;
           }, 3000);
         }
       })
     }
+  }
+
+  progressBar() {
+    this.interval = interval(30).subscribe(() => {
+      if (this.progressBarValue < 100) {
+        this.progressBarValue += 1;
+        console.log(this.progressBarValue);
+      } else {
+        this.progressBarValue = 100; // Ensure it's exactly 100%.
+        this.interval.unsubscribe(); // Stop the interval when it reaches 100%.
+      }
+    });
   }
 }

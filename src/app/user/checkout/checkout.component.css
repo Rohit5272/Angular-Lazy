@@ -1,4 +1,8 @@
 
+.mat-mdc-progress-bar {
+    --mdc-linear-progress-active-indicator-color: rgb(230, 178, 82);
+    --mdc-linear-progress-track-color: rgba(63, 81, 181, 0.25);
+}
 /* ------------------------------- */
 .div {
   width: 100%;
@@ -9,7 +13,7 @@
   width: 80%;
   margin: 0px auto 60px auto;
   display: flex;
-  box-shadow: 0 2px 4px 0 rgb(220, 219, 219),0 4px 16px 0 rgb(217, 216, 216);
+  box-shadow: 0 2px 4px 0 rgb(239, 223, 192),0 4px 16px 0 rgb(239, 223, 192);
 }
 .wrapper h1 {
   /* border: 1px solid red; */

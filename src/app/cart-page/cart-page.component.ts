@@ -3,6 +3,8 @@ import { ProductService } from '../services/product.service';
 import { cart, priceSummary } from '../includes/model/data-type';
 import { Router } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { AddProductSnackComponent } from './add-product-snack/add-product-snack.component';
 
 @Component({
   selector: 'app-cart-page',
@@ -12,6 +14,7 @@ import { ChangeDetectorRef } from '@angular/core';
 export class CartPageComponent implements OnInit{
   cartData:cart[] | undefined;
   selectItems:boolean=true;
+  durationInSeconds = 1;
   // selectedArrayItems:any = [];
 
   priceSummary: priceSummary={
@@ -22,7 +25,7 @@ export class CartPageComponent implements OnInit{
     total: 0
   }
 
-  constructor(private _productService:ProductService,
+  constructor(private _productService:ProductService,private _snackBar: MatSnackBar,
     private _router:Router,private cd: ChangeDetectorRef) {}
   
   ngOnInit(): void {
@@ -72,6 +75,9 @@ export class CartPageComponent implements OnInit{
   }
 
   checkItem(item: cart) {
+    if(item.selected){
+      this.openSnackBar()
+    }
     this._productService.selectedOrder(item).subscribe(res=> {
       this.loadDetails();
     })
@@ -79,6 +85,12 @@ export class CartPageComponent implements OnInit{
   
   checkout() {
     this._router.navigate(['user/checkout']);
+  }
+
+  openSnackBar() {
+    this._snackBar.openFromComponent(AddProductSnackComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
   }
 
 }

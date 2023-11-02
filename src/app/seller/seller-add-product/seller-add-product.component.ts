@@ -32,6 +32,7 @@ export class SellerAddProductComponent {
       }
       setTimeout(() => {
         this.addProductMessage=undefined
+        this.addProductForm.reset(); // Reset the form
       }, 3000);
     })
   }

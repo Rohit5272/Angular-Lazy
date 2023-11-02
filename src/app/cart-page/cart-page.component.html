@@ -19,7 +19,8 @@
                         <input type="text" [(ngModel)]="cart.quantity">
                         <button (click)="increase(cart)">+</button>
                     </div>
-                    <button mat-raised-button (click)="removeToCart(cart.id)">Delete</button>
+                    <button mat-raised-button (click)="removeToCart(cart.id)" matTooltip="Delete From Cart"
+                    aria-label="Button that displays a tooltip when focused or hovered over">Delete</button>
                 </div>
             </div>
         </div>

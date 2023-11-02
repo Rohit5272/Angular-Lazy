@@ -37,16 +37,6 @@
       "id": 2
     },
     {
-      "name": "apple",
-      "price": "70000",
-      "color": "red",
-      "category": "women",
-      "description": "excellent",
-      "image": "https://www.reliancedigital.in/medias/Asus-BV302W-Laptop-492850235-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w3Njg3OXxpbWFnZS9qcGVnfGltYWdlcy9oNjQvaDY2Lzk4MzU0ODk4NTM0NzAuanBnfGE0OGFjOGM2NTQ5ZWRlNWY5ZjlhMDM3ZGI5MjJiZWZlNDFlOGUzMDQxZGQ3NWVlODQ0N2IwMzczMDEyYWJkZDU",
-      "sellerId": 1,
-      "id": 3
-    },
-    {
       "name": "Ipad ",
       "price": 40000,
       "color": "blue",
@@ -57,32 +47,32 @@
       "id": 4
     },
     {
-      "name": "jeans",
-      "price": "5000",
-      "color": "blue",
-      "category": "men",
-      "description": "good",
-      "image": "https://assets.ajio.com/medias/sys_master/root/20220908/NZ5N/6318fe86aeb269dbb378baa3/-473Wx593H-443000519-ltblue-MODEL.jpg",
+      "name": "Aser",
+      "price": 50000,
+      "color": "grey",
+      "category": "accesories",
+      "description": "acer Aspire 5 A515-57G Intel Core i5 12th Gen (15.6 inch, 16GB, 512GB, Windows 11, MS Office 2021, NVIDIA RTX 2050, FHD IPS Display, Steel Gray, UN.K9TSI.003)",
+      "image": "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1697020776/Croma%20Assets/Computers%20Peripherals/Laptop/Images/261170_0_txrhvt.png",
       "sellerId": 1,
       "id": 5
     },
     {
-      "name": "t-shirt",
-      "price": "5000",
-      "color": "white",
-      "category": "men",
-      "description": "t-shirts in pink shirts",
-      "image": "https://images-cdn.ubuy.co.in/63400407ad052c2c656c7cd6-lelebear-stretch-anti-wrinkle-shirt-men.jpg",
+      "name": "Lenovo",
+      "price": 20000,
+      "color": "grey",
+      "category": "accesories",
+      "description": "Lenovo Tab M10 Plus Gen 3 Wi-Fi Android Tablet (10.61 Inch, 6GB RAM, 128GB ROM, Storm Grey)",
+      "image": "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1667849014/Croma%20Assets/Computers%20Peripherals/Tablets%20and%20iPads/Images/262303_0_qwa3m4.png?tr=w-400",
       "sellerId": 1,
       "id": 6
     },
     {
-      "name": "Watch",
+      "name": "Redmi",
       "price": "20000",
       "color": "black",
       "category": "accesories",
-      "description": "good",
-      "image": "https://bingerstore.in/cdn/shop/products/0_Switzerland-BINGER-Men-Watches-Luxury-Brand-Sapphire-Japan-Automatic-Mechanical-Watch-Men-Luminous-Hands-Stainless-Steel_large.png?v=1573335992",
+      "description": "Redmi Pad Wi-Fi Android Tablet (10.61 Inch, 6GB RAM, 128GB ROM, Graphite Gray)",
+      "image": "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1684946494/Croma%20Assets/Computers%20Peripherals/Tablets%20and%20iPads/Images/270706_0_sa3slg.png",
       "sellerId": 1,
       "id": 7
     },
@@ -97,12 +87,12 @@
       "id": 9
     },
     {
-      "name": "Sunglasses",
-      "price": 1000,
-      "color": "blue",
+      "name": "Apple",
+      "price": 60000,
+      "color": "black",
       "category": "accesories",
-      "description": "good",
-      "image": "https://contents.mediadecathlon.com/p1981424/40f11e6976db930badeec6d9210eab24/p1981424.jpg?format=auto&quality=70&f=650x0",
+      "description": "Apple iPad Air 5th Generation Wi-Fi+5G (10.9 Inch, 256GB, Blue, 2022 model)",
+      "image": "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1685969717/Croma%20Assets/Computers%20Peripherals/Tablets%20and%20iPads/Images/264350_rtyn12.png?tr=w-640",
       "sellerId": 1,
       "id": 11
     },
@@ -215,6 +205,66 @@
       "image": "https://m.media-amazon.com/images/I/81fxjeu8fdL._SL1500_.jpg",
       "sellerId": 1,
       "id": 23
+    },
+    {
+      "name": "shirt",
+      "price": 700,
+      "color": "black",
+      "category": "men",
+      "description": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1376577/2022/6/3/ea10ab6c-883e-437a-8780-ed87484393f81654235830793-Roadster-Men-Black--Grey-Checked-Casual-Sustainable-Shirt-42-1.jpg",
+      "image": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1376577/2022/6/3/ea10ab6c-883e-437a-8780-ed87484393f81654235830793-Roadster-Men-Black--Grey-Checked-Casual-Sustainable-Shirt-42-1.jpg",
+      "sellerId": 1,
+      "id": 24
+    },
+    {
+      "name": "shirt",
+      "price": 1000,
+      "color": "white",
+      "category": "men",
+      "description": "HERE&NOW\nMen White Slim Fit Printed Casual Shirt",
+      "image": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/19140996/2022/7/16/6634490b-5122-47b9-b8d5-6883d4ecea2a1657972357555Shirts1.jpg",
+      "sellerId": 1,
+      "id": 25
+    },
+    {
+      "name": "shirt",
+      "price": 1000,
+      "color": "white",
+      "category": "men",
+      "description": "HERE&NOW\nMen White Slim Fit Printed Casual Shirt",
+      "image": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/19140996/2022/7/16/6634490b-5122-47b9-b8d5-6883d4ecea2a1657972357555Shirts1.jpg",
+      "sellerId": 1,
+      "id": 26
+    },
+    {
+      "name": "Roadster",
+      "price": 800,
+      "color": "black",
+      "category": "men",
+      "description": "HERE&NOW\nMen Black Slim Fit Casual Shirt",
+      "image": "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/19818628/2022/9/6/ec27eee6-d613-4423-8e0f-007aea1603c31662468109188Shirts1.jpg",
+      "sellerId": 1,
+      "id": 27
+    },
+    {
+      "name": "Dress",
+      "price": 1000,
+      "color": "black",
+      "category": "men",
+      "description": "U.S. Polo Assn.\nMen Black Brand Logo Embroidered Pure Cotton Lounge Pants",
+      "image": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/14121660/2023/10/20/d2a8128f-2f98-4602-bb89-58812fe38d531697799339494USPoloAssnMenBlackBrandLogoEmbroideredPureCottonLoungePants1.jpg",
+      "sellerId": 1,
+      "id": 28
+    },
+    {
+      "name": "dress",
+      "price": 1200,
+      "color": "purple",
+      "category": "women",
+      "description": "SINGNI\nWomen Purple Ethnic Motifs Embroidered Mirror Work Kurta with Trousers & Dupatta",
+      "image": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/20695836/2022/11/10/ba1724c2-c606-481c-a0ca-63424b61a8661668078028270WomensRayonPrintedEmbroideredKurtaWithPantAndDupatta1.jpg",
+      "sellerId": 1,
+      "id": 29
     }
   ],
   "shop": [
@@ -278,7 +328,50 @@
       "userId": 1,
       "id": 7,
       "selected": true,
-      "date": "2023-10-31T09:43:35.520Z"
+      "date": "2023-11-02T08:29:47.336Z"
+    },
+    {
+      "name": "HP",
+      "price": "50000",
+      "color": "GREY",
+      "category": "accesories",
+      "description": "good",
+      "image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9320/media-gallery/xs9320t-cnb-00005ff090-sl.psd?fmt=png-alpha&pscan=auto&scl=1&wid=4000&hei=4000&qlt=100,1&resMode=sharp2&size=4000,4000&chrss=full&imwidth=5000",
+      "sellerId": 1,
+      "quantity": 3,
+      "userId": 1,
+      "productId": 9,
+      "selected": false,
+      "id": 8,
+      "date": "2023-11-02T04:28:03.686Z"
+    },
+    {
+      "name": "Apple",
+      "price": 50000,
+      "color": "black",
+      "category": "mobiles",
+      "description": "Apple iPhone 15 Plus (128 GB) - Black",
+      "image": "https://m.media-amazon.com/images/I/81fxjeu8fdL._SL1500_.jpg",
+      "sellerId": 1,
+      "quantity": 1,
+      "userId": 1,
+      "productId": 23,
+      "selected": false,
+      "id": 10
+    },
+    {
+      "name": "Samsung m13",
+      "price": "2000",
+      "color": "red",
+      "category": "accesories",
+      "description": "(Aqua Green, 4GB, 64GB Storage) | 6000mAh Battery | Upto 8GB RAM with RAM Plus",
+      "image": "https://images.samsung.com/is/image/samsung/p6pim/in/sm-m135flgqins/gallery/in-galaxy-m13-sm-m135-sm-m135flgqins-533230710?$1300_1038_PNG$",
+      "sellerId": 1,
+      "quantity": 1,
+      "userId": 1,
+      "productId": 2,
+      "selected": false,
+      "id": 11
     }
   ],
   "orders": [
@@ -289,7 +382,7 @@
       "contact": "97304367366",
       "totalPrice": 50100,
       "userId": 1,
-      "date": "2023-11-01T04:26:57.630Z",
+      "date": "2023-11-02T06:56:01.748Z",
       "products": [
         {
           "name": "iphone",
@@ -303,7 +396,7 @@
           "productId": 17,
           "userId": 1,
           "selected": true,
-          "date": "2023-10-31T09:43:35.520Z"
+          "date": "2023-11-02T04:50:20.447Z"
         }
       ],
       "id": 1

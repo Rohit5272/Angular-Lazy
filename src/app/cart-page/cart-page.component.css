@@ -37,7 +37,7 @@
     font-family: 'Cormorant Garamond', serif;
     margin-bottom: 20px;
     padding: 15px;
-    box-shadow: 0 2px 4px 0 rgb(220, 219, 219),0 4px 16px 0 rgb(217, 216, 216);
+    box-shadow: 0 2px 4px 0 rgb(239, 223, 192),0 4px 16px 0 rgb(239, 223, 192);
 }
 .photo {
     width: 40%;
@@ -151,7 +151,7 @@ img:hover {
     height: auto;
     padding: 20px 0px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px 0 rgb(220, 219, 219),0 4px 16px 0 rgb(217, 216, 216);
+    box-shadow: 0 2px 4px 0 rgb(239, 223, 192),0 4px 16px 0 rgb(239, 223, 192);
 }
 .detail {
     border-bottom: 1px solid #ddd;

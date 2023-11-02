@@ -16,6 +16,9 @@ import { ShopComponent } from './shop/shop.component';
 import { DiscountComponent } from './home/discount/discount.component';
 import { GooglePayButtonModule } from '@google-pay/button-angular';
 import { RelatedProductsComponent } from './product-details/related-products/related-products.component';
+import { AddedProductComponent } from './product-details/added-product/added-product.component';
+import { AddProductSnackComponent } from './cart-page/add-product-snack/add-product-snack.component';
+import { NotFoundComponent } from './includes/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { RelatedProductsComponent } from './product-details/related-products/rel
     ShopComponent,
     DiscountComponent,
     RelatedProductsComponent,
+    AddedProductComponent,
+    AddProductSnackComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

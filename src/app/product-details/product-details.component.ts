@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { cart, product } from '../includes/model/data-type';
-import { reduce } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { AddedProductComponent } from './added-product/added-product.component';
 
 @Component({
   selector: 'app-product-details',
@@ -15,8 +16,10 @@ export class ProductDetailsComponent implements OnInit{
   removeCart=false;
   cartData:product | undefined;
   relatedProducts:product[] = [];
+  durationInSeconds = 1;
 
-  constructor(private _activeRoute:ActivatedRoute,private _productService:ProductService,private _router: Router) {
+  constructor(private _snackBar: MatSnackBar,private _activeRoute:ActivatedRoute,private _productService:ProductService,
+    private _router: Router) {
     this._router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.updateProductDetails();
@@ -27,6 +30,7 @@ export class ProductDetailsComponent implements OnInit{
   ngOnInit(): void {
     this.updateProductDetails()
   }
+
 
   updateProductDetails(){
     let productId = this._activeRoute.snapshot.paramMap.get('productId');
@@ -71,8 +75,15 @@ export class ProductDetailsComponent implements OnInit{
     })
   }
 
+  openSnackBar() {
+    this._snackBar.openFromComponent(AddedProductComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
+  }
+
   AddToCart() {
     if(this.productData) {
+      this.openSnackBar()
       this.productData.quantity = this.productQuantity;
       if(!sessionStorage.getItem('user')) {
         // console.log(this.productData);
