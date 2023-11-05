@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Poppins:wght@300&family=Raleway:ital,wght@0,300;1,200&display=swap');
+
+.containers {
+    background-color: rgb(242, 222, 185);
+    height: auto;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    z-index: 500;
+    /* border: 1px solid green; */
+}
+ul{
+    margin: 0;
+    list-style-type: none;
+    /* border: 1px solid red; */
+    display: flex;
+}
+.containers ul li {
+    font-size: 20px;
+    /* border: 1px solid green; */
+    padding: 0;
+    /* margin: 0px 30px; */
+    margin: 0 2%;
+    cursor: pointer;
+}
+.category h2{
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgb(101, 100, 100);
+    
+}
+.menu {
+    position: absolute;
+    box-shadow: 0 2px 4px 0 rgb(170, 168, 168),0 4px 16px 0 rgb(170, 168, 168);
+    height: auto;
+    top: 99px;
+    left: 71px;
+    display: flex;
+    transition: all 0.3s ease;
+    background-color: white;
+    display: none;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+    border-radius: 3px;
+    z-index: 1;
+}
+.pic {
+    /* border: 1px solid red; */
+    width: 200px;
+    height: 200px;
+    height: auto;
+    overflow: hidden;
+}
+.box {
+    /* border: 1px solid blue; */
+    margin: 8px 10px;
+}
+.box h4 {
+    /* border: 1px solid red; */
+    text-align: center;
+    margin: 0;
+    padding-top: 5px;
+    letter-spacing: 1px;
+    font-family: 'Cormorant Garamond', serif;
+    color: rgb(73, 72, 72);
+    font-size: 17px;
+    font-weight: 900;
+}
+.pic img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s;
+    transform: scale(1);
+    display: block;
+}
+.pic:hover img {
+    transform: scale(1.1);
+}
+.category h2:hover {
+    border-bottom: 2px solid rgb(107, 71, 3);
+}
+.category:hover .menu {
+    display: flex;
+    max-height: 500px;
+}
+/* ----------------Men---------------------------- */
+.category1 {
+    width: auto;
+}
+.category1 h2{
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgb(101, 100, 100);
+}
+.category1 h2 a{
+    text-decoration: none;
+    color: rgb(101, 100, 100);
+}
+.category1 h2:hover {
+    border-bottom: 2px solid rgb(107, 71, 3);
+}
+
+.category1:hover .menu1{
+    display: flex;
+}
+.menu1 {
+    position: absolute;
+    box-shadow: 0 2px 4px 0 rgb(170, 168, 168),0 4px 16px 0 rgb(170, 168, 168);
+    /* border: 1px solid red; */
+    height: auto;
+    width: auto;
+    top: 99px;
+    left: 71px;
+    display: flex;
+    transition: all 0.3s ease;
+    background-color: white;
+    border-radius: 3px;
+    padding: 10px;
+    display: none;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+.menu-item {
+    width: 250px;
+}
+.menu1 ul {
+    margin: 0;
+    padding: 0;
+    display: block;
+    margin: 30px 15px;
+    /* border: 1px solid green; */
+}
+.menu1 ul li {
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
+}
+.menu1 ul h4 {
+    margin: 5px 0px;
+    color: rgb(181, 122, 14);
+    font-size: 16px;
+}
+.menu1 ul li a{
+    /* border: 1px solid red; */
+    text-decoration: none;
+    color: rgb(91, 90, 90);
+    font-size: 13px;
+    font-weight: 500;
+    font-weight: 600;
+    margin: 0;
+    transition: all 0.2s;
+}
+.menu1 ul li a:hover {
+    color: rgb(181, 122, 14);
+    font-size: 14px;
+    font-weight: 600;
+}
+.pic1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.pic1 {
+    /* border: 1px solid red; */
+    margin: 15px;
+}
+/* ----------women------------ */
+.pic2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1);
+    transition: all 0.3s;
+}
+.pic2 {
+    /* border: 1px solid red; */
+    margin: 15px;
+    width: 240px;
+    height: 200px;
+}
+.pic2:hover img {
+    transform: scale(1.1);
+}
+
+/* ------------beauty------- */
+.pic4 img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1);
+    transition: all 0.3s;
+}
+.pic4 {
+    /* border: 1px solid red; */
+    margin: 15px 20px;
+    width: 240px;
+    height: 300px;
+    overflow: hidden;
+}
+.pic4:hover img {
+    transform: scale(1.1);
+}
+
+@media (max-width:680px) {
+    .containers {
+        display: none;
+    }
+}

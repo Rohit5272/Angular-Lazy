@@ -23,21 +23,28 @@
     height: 280px;
     margin: 50px 0px;
 }
+.row h1{
+    cursor: pointer;
+}
 .row p {
     font-size: 15px;
+    cursor: pointer;
 }
 ul li {
     list-style-type: none;
     font-size: 15px;
     /* border: 1px solid wheat; */
     display: flex;
+    cursor: pointer;
 }
 li p {
     padding-left: 3%;
+    cursor: pointer;
 }
 li i {
     color: white;
     font-size: 25px;
+    cursor: pointer;
 }
 
 

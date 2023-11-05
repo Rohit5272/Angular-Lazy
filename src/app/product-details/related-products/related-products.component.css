@@ -30,6 +30,7 @@
     width: 100%;
     height: 200px;
     margin: auto;
+    overflow: hidden;
 }
 img {
     width: 100%;
@@ -39,7 +40,7 @@ img {
     border: none;
 }
 img:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 .offer {
     display: flex;

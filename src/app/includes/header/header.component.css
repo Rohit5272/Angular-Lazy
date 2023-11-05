@@ -74,6 +74,10 @@
 mat-icon {
   font-size: 27px;
   color: black;
+  cursor: pointer;
+}
+mat-icon:hover {
+  color: orange;
 }
 .suggested-result {
   position: absolute;
@@ -114,6 +118,9 @@ mat-icon {
 
 .toggleopen {
   display: none;
+}
+.titlename h6:hover, h4:hover{
+  color: orange;
 }
 
 @media (max-width: 660px) {

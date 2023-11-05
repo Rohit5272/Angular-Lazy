@@ -19,6 +19,7 @@ import { RelatedProductsComponent } from './product-details/related-products/rel
 import { AddedProductComponent } from './product-details/added-product/added-product.component';
 import { AddProductSnackComponent } from './cart-page/add-product-snack/add-product-snack.component';
 import { NotFoundComponent } from './includes/not-found/not-found.component';
+import { MenubarComponent } from './home/menubar/menubar.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { NotFoundComponent } from './includes/not-found/not-found.component';
     AddedProductComponent,
     AddProductSnackComponent,
     NotFoundComponent,
+    MenubarComponent,
   ],
   imports: [
     BrowserModule,
