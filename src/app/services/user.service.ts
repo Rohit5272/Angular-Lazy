@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { SignUp, login, profile } from '../includes/model/data-type';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { SignUp, login, profile } from '../shared/model/data-type';
 
 @Injectable({
   providedIn: 'root'

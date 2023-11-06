@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { cart, order, profile } from '../../includes/model/data-type';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { interval } from 'rxjs';
+import { cart, profile } from 'src/app/shared/model/data-type';
 
 declare var Razorpay: any;
 @Component({

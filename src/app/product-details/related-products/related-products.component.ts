@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { product } from 'src/app/includes/model/data-type';
+import { product } from 'src/app/shared/model/data-type';
 
 @Component({
   selector: 'app-related-products',

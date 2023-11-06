@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './home/search/search.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ShopComponent } from './shop/shop.component';
-import { NotFoundComponent } from './includes/not-found/not-found.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},

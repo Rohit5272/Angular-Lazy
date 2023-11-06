@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { product } from '../../includes/model/data-type';
 import { take } from 'rxjs';
+import { product } from 'src/app/shared/model/data-type';
 
 @Component({
   selector: 'app-discount',

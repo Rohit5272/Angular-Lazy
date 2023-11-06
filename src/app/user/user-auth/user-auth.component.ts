@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { ProductService } from 'src/app/services/product.service';
-import { SignUp, cart, login, product } from 'src/app/includes/model/data-type';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { product, cart } from 'src/app/shared/model/data-type';
 
 @Component({
   selector: 'app-user-auth',

@@ -1,8 +1,8 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { SignUp, login, product } from '../includes/model/data-type';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
+import { SignUp, login } from '../shared/model/data-type';
 
 @Injectable({
   providedIn: 'root'

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { order } from '../../includes/model/data-type';
+import { order } from 'src/app/shared/model/data-type';
 
 @Component({
   selector: 'app-my-orders',

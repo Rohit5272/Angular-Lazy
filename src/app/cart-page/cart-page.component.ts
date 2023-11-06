@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
-import { cart, priceSummary } from '../includes/model/data-type';
 import { Router } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddProductSnackComponent } from './add-product-snack/add-product-snack.component';
+import { cart, priceSummary } from '../shared/model/data-type';
 
 @Component({
   selector: 'app-cart-page',

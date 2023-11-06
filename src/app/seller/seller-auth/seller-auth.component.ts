@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SellerService } from '../../services/seller.service';
 import { Router } from '@angular/router';
-import { SignUp } from '../../includes/model/data-type';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 

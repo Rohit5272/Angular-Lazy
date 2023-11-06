@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
-import { product } from '../../includes/model/data-type';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { product } from 'src/app/shared/model/data-type';
 
 console.log("seller update product...");
 @Component({

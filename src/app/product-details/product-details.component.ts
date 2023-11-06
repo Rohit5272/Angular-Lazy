@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
-import { cart, product } from '../includes/model/data-type';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddedProductComponent } from './added-product/added-product.component';
+import { product, cart } from '../shared/model/data-type';
 
 @Component({
   selector: 'app-product-details',
