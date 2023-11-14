@@ -5,12 +5,14 @@ import { authGuard } from '../auth/auth.guard';
 import { SellerAuthComponent } from './seller-auth/seller-auth.component';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
+import { ChartsComponent } from './charts/charts.component';
 
 const routes: Routes = [
   {path:'seller-add-product',component:SellerAddProductComponent, canActivate:[authGuard]},
   {path:'seller-auth',component:SellerAuthComponent},
   {path:'seller-home',component:SellerHomeComponent,canActivate:[authGuard] },
   {path:'seller-update-product/:id',component:SellerUpdateProductComponent,canActivate:[authGuard]},
+  { path: 'charts', component: ChartsComponent, canActivate: [authGuard] },
 
 ];
 

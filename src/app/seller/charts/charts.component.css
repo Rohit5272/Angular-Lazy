@@ -1,0 +1,12 @@
+.first {
+    display: flex;
+    border: 1px solid red;
+}
+.pie {
+    border: 1px solid green;
+    width: 50%;
+}
+.line {
+    border: 1px solid green;
+    width: 70%;
+}

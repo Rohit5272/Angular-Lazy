@@ -18,7 +18,7 @@ import { CartPageComponent } from '../cart-page/cart-page.component';
     CheckoutComponent,
     MyOrdersComponent,
     ProfileComponent,
-    CartPageComponent
+    CartPageComponent,
   ],
   imports: [
     CommonModule,

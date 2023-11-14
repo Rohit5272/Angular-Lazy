@@ -41,6 +41,7 @@ export class HeaderComponent implements OnInit{
         else {
           // console.log('outside seller');
           this.menuType = 'default'
+          
         }
       }
     })
@@ -94,4 +95,5 @@ export class HeaderComponent implements OnInit{
   opentoggle() {
     this.show = !this.show;
   }  
+  
 }

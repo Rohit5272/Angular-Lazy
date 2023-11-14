@@ -26,9 +26,15 @@
 .row h1{
     cursor: pointer;
 }
+.row h1:hover{
+    color: rgb(241, 164, 20);
+}
 .row p {
     font-size: 15px;
     cursor: pointer;
+}
+.row p:hover {
+    color: rgb(241, 164, 20);
 }
 ul li {
     list-style-type: none;
@@ -37,10 +43,10 @@ ul li {
     display: flex;
     cursor: pointer;
 }
-li p {
-    padding-left: 3%;
-    cursor: pointer;
+ul li:hover {
+    color: rgb(241, 164, 20);
 }
+
 li i {
     color: white;
     font-size: 25px;

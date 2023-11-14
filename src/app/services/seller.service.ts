@@ -48,4 +48,8 @@ export class SellerService {
     })
   }
 
+  getOrders() {
+    return this._http.get(`http://localhost:3000/orders`)
+  }
+
 }

@@ -26,7 +26,7 @@
     </ul>
   </div>
 
-  <!---------------------- --nav-links--------------------  -->
+  <!------------------------nav-links--------------------  -->
 
   <div [ngSwitch]="menuType" class="nav-links">
     <!-- -------------Default------------------ -->
@@ -79,7 +79,9 @@
       <li>
         <div class="titlename">
           <h6>Hello,</h6>
-          <h4>{{ sellerName | titlecase }}</h4>
+          <h4><a routerLink="sell/charts">
+            <button >{{ sellerName | titlecase }}</button>
+          </a></h4>
         </div>
       </li>
       <li>
@@ -127,6 +129,7 @@
         >
       </li>
     </ul>
+    <!-- ----------------User----------------- -->
     <ul *ngSwitchCase="'user'">
       <!-- <li><a routerLink="seller-auth"><mat-icon>store</mat-icon></a></li> -->
       <li>
@@ -160,7 +163,7 @@
       <li>
         <div class="titlename">
           <h6>Hello,</h6>
-          <h4>{{ sellerName | titlecase }}</h4>
+          <h4><a routerLink="sell/charts">{{ sellerName | titlecase }}</a></h4>
         </div>
       </li>
       <li>

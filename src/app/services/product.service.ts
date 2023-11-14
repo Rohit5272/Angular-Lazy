@@ -104,9 +104,6 @@ export class ProductService {
 
   // ------selected orders------
   selectedOrder(data:any) {
-    // console.log(product.id);
-    data.date = new Date;
-    console.log(data);
     return this._http.put(`http://localhost:3000/cart/${data.id}`,data)
   }
 

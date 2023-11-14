@@ -104,6 +104,7 @@ export class ProductDetailsComponent implements OnInit{
         // console.log(cartData);
         this._productService.addToCart(cartData).subscribe((res) => {
           if(res) {
+            console.log(res);
             this._productService.getCartList(userId);
             this.removeCart = true;
           }

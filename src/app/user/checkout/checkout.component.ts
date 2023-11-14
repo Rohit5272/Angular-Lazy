@@ -111,12 +111,12 @@ export class CheckoutComponent implements OnInit{
     
 
     if(this.totalPrice) {
-      let orderData:any = {
+      let orderData : any = {
         ...this.orderForm.value,
         totalPrice: this.totalPrice,
         userId: userId,
         date:new Date,
-        products: this.orderProduct,
+        products: this.orderProduct.map(item => ({ ...item, orderDate: new Date() })),
         id: undefined
       }
       orderData.products?.forEach((item: { id: any; }) => {
@@ -141,7 +141,6 @@ export class CheckoutComponent implements OnInit{
     this.interval = interval(30).subscribe(() => {
       if (this.progressBarValue < 100) {
         this.progressBarValue += 1;
-        console.log(this.progressBarValue);
       } else {
         this.progressBarValue = 100; // Ensure it's exactly 100%.
         this.interval.unsubscribe(); // Stop the interval when it reaches 100%.
